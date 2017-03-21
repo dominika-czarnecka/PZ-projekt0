@@ -116,7 +116,7 @@ class document:
     def get_unique_words(self):
         words = []
 
-        for word in preProcessing(self.text.split()) :
+        for word in self.preProcessing(self.text.split()) :
             if not word in words:
                 words.append(word)
         return  words
@@ -127,7 +127,7 @@ class document:
         for word in self.text.split():
            vector[inverse_vocabulary[word]] = 1
 
-class tf-idf :
+class tfidf :
     def __init__(self):
         self.D = 0
         self.df = {}
@@ -153,7 +153,7 @@ class tf-idf :
         return l_wyst_tokenu/ l_tokenow
 
     def tfidf(self, token, dock):
-        return  tf(token, dock) * idf(token)
+        return  tf(token, dock) * self.idf(token)
 
 
 
